@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class QueryBuilder
+ */
 class QueryBuilder
 {
   protected $pdo;
@@ -19,3 +22,4 @@ class QueryBuilder
 
   }
 }
+  
