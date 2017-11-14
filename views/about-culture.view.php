@@ -1,18 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php require('partials/head.php') ;?>
 
-<head>
+    <h1>About Culture <?= $name ?></h1>
 
-    <meta charset="UTF-8">
-    <title>Document</title>
+<?php require('partials/footer.php');
 
 
-</head>
-
-<body>
-
-<h1>About Culture <?= $name ?></h1>
-
-</body>
-
-</html>
