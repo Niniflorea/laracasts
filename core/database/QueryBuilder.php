@@ -18,8 +18,6 @@ class QueryBuilder
 
     $statement->execute();
 
-    return $tasks = $statement->fetchAll(PDO::FETCH_CLASS);
-
-  }
+    return $tasks = $statement->fetchAll(PDO::FETCH+
 }
   
