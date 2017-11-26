@@ -5,19 +5,39 @@
  */
 class QueryBuilder
 {
-  protected $pdo;
+        protected $pdo;
 
-  public  function __construct($pdo)
-  {
-      $this->pdo = $pdo;
-  }
+        public  function __construct($pdo)
+        {
+            $this->pdo = $pdo;
+        }
 
-  public function selectAll($table)
-  {
-    $statement = $this->pdo->prepare("select * from {$table}");
+        public function selectAll($table)
+        {
+            $statement = $this->pdo->prepare("select * from {$table}");
 
-    $statement->execute();
+            $statement->execute();
 
-    return $tasks = $statement->fetchAll(PDO::FETCH+
+            return $tasks = $statement->fetchAll(PDO::FETCH_CLASS);
+
+        }
+
+        public function insert($table, $parameters)
+        {
+            $sql = sprintf(
+                'insert into %s (%s)  values (%s)',
+                $table,
+                implode(',', array_keys($parameters)),
+                ':'.implode(', :', array_keys($parameters))
+            );
+
+            try{
+                $statement = $this->pdo->prepare($sql);
+                $statement->execute($parameters);
+            } catch (Exception $e) {
+                die('Whoops, something went wrong.');
+            }
+        }
+
 }
   

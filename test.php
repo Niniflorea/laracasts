@@ -39,3 +39,6 @@ $posts = [
 $titles = array_column($posts, 'title');
 
 var_dump($titles);
+
+
+
