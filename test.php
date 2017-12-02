@@ -12,6 +12,7 @@ Class Post
     }
 }
 
+
 $posts = [
     new Post('My first Post', true),
     new Post('My Second Post', true),
@@ -39,6 +40,5 @@ $posts = [
 $titles = array_column($posts, 'title');
 
 var_dump($titles);
-
 
 
