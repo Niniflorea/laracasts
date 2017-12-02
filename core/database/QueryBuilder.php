@@ -25,7 +25,7 @@ class QueryBuilder
         public function insert($table, $parameters)
         {
             $sql = sprintf(
-                'insert into %s (%s)  values (%s)',
+                'insert into %models (%models)  values (%models)',
                 $table,
                 implode(',', array_keys($parameters)),
                 ':'.implode(', :', array_keys($parameters))

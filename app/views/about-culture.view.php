@@ -1,4 +1,4 @@
-<?php require('partials/head.php') ;?>
+<?php require('partials/head.php');?>
 
     <h1>About Culture <?= $name ?></h1>
 
